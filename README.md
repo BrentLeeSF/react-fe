@@ -1,8 +1,8 @@
 # react-fe
  
-Installing Node and Running on Linux
-
-$ sudo dnf install nodejs
-Confirm Node is Installed: $ node -v
-cd into the project, then $ npm install
+Installing Node and Running on Linux<br />
+<br />
+$ sudo dnf install nodejs<br />
+Confirm Node is Installed: $ node -v<br />
+cd into the project, then $ npm install<br />
 Start project $ npm start
