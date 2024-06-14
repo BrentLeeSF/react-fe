@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Header from './components/header';
 import SideBar from './components/sidebar';
 import HomePage from './components/homepage';
@@ -16,8 +15,10 @@ function App() {
   return (
     <>
       <Header />
-      <SideBar />
-      <HomePage />
+      <div id="Main">
+        <SideBar />
+        <HomePage />
+      </div>
     </>
   );
 }
