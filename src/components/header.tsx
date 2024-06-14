@@ -4,7 +4,7 @@ import Search from './search';
 import SignIn from './signin';
 import SignUp from './signup';
 
-function Header() {
+export default function Header() {
   return (
     <div className="Header">
       <div className="LeftAligned"></div>
@@ -17,5 +17,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;

@@ -7,7 +7,7 @@ const displayCategoryList = listOfCategories.map((category, index) => (
   </li>
 ));
 
-function SideBar() {
+export default function SideBar() {
   return (
     <div className="SideBar">
       <h2>Test this sidebar!</h2>
@@ -15,5 +15,3 @@ function SideBar() {
     </div>
   );
 }
-
-export default SideBar;

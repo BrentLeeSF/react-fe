@@ -9,7 +9,7 @@ const displayProductList = listOfProducts.map((product, index) => (
   </li>
 ));
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div className="HomePage">
       <div className="productTitle">
@@ -21,5 +21,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default HomePage;
