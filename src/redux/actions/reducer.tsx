@@ -1,13 +1,13 @@
 import { FETCH_IMG_FAILURE, FETCH_IMG_REQUEST, FETCH_IMG_SUCCESS } from './action';
 
-const initialstate={
-    loading:true,
-    data:[],
-    error:''
+const initialstate = {
+    loading: true,
+    data: [],
+    error: ''
 }
 
-export const Reducer=(state=initialstate, action: any)=>{
-    switch(action.type){
+export const Reducer = (state = initialstate, action: any) => {
+    switch(action.type) {
         case FETCH_IMG_REQUEST:return{
             ...state,
             loading:true

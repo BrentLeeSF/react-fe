@@ -8,7 +8,6 @@ const fetchImgRequest = () => {
 }
 
 const fetimgSuccess = (data: any) => {
-    console.log('Data - - - - ',data);
     return {
         type: FETCH_IMG_SUCCESS,
         payload: data
@@ -29,7 +28,7 @@ export const fetchImageList = () => {
             .then((res: any)=>{
                 let listOfTodos = res.data
                 dispatch(fetimgSuccess(listOfTodos))
-            }).catch(err=>{
+            }).catch((err) => {
                 dispatch(fetimgFailure(err.message))
             })
 

@@ -10,21 +10,21 @@ const HomePage = (props: any) => {
 
     const productList = props && props.imglist && props.imglist.data.map((product: any, index: number) => (
         <li key={index}>
-          <div className="product">
-            {product.title}
-          </div>
+            <div className="product">
+                {product.title}
+            </div>
         </li>
-      ));
-      return (
+    ));
+    return (
         <div className="HomePage">
-          <div className="productTitle">
-            <h2>Test this home page!</h2>
-          </div>
-          <div className="productList">
-            {productList}
-          </div>
+            <div className="productTitle">
+                <h2>Test this home page!</h2>
+            </div>
+            <div className="productList">
+                {productList}
+            </div>
         </div>
-      );
+    );
     /*return props && props.imglist && props.imglist.loading?(
       
         <h2>Loading...</h2>
