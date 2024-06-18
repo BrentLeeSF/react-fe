@@ -1,28 +1,29 @@
-import { fetchProductsList } from '../../services/products.service';
-import { connect } from 'react-redux';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { Counter } from '../counter';
-import { Product } from '../../interfaces/Product';
 import './homepage.css';
+import { selectAllPosts, getPostsError, getPostsStatus, fetchPosts } from '../../services/postsSlice';
+import { AppDispatch } from '../../redux/store';
+import { Post } from '../../interfaces/Post';
 
-const HomePage = (props: any) => {
+export default function HomePage() {
 
-    /**
-     * https://stackoverflow.com/questions/58159108/react-get-state-from-redux-store-within-useeffect
-    const user = useSelector(state => state.user);
-    useEffect(() => { 
-        // do stuff     
-    }, [user]);*/
+    const dispatch = useDispatch<AppDispatch>();
 
-    useEffect(()=>{
-        props.fetchAllProducts()
-    });
+    const posts = useSelector(selectAllPosts);
+    const postStatus = useSelector(getPostsStatus);
+    const error = useSelector(getPostsError);
 
-    const productList = props && props.productsList && props.productsList.data.map((product: Product, index: number) => (
+    useEffect(() => {
+        if (postStatus === undefined) {
+            dispatch(fetchPosts())
+        }
+    }, [postStatus, dispatch])
+
+    const productList = posts && posts.posts && posts.posts.map((post: Post, index: number) => (
         <li key={index}>
             <div className="product">
-                <div>{product.title}</div>
-                <div><Counter index={index} /></div>
+                <div>{post.id}, {post.title}</div>
             </div>
         </li>
     ));
@@ -36,37 +37,4 @@ const HomePage = (props: any) => {
             </div>
         </div>
     );
-    /*return props && props.productsList && props.productsList.loading?(
-      
-        <h2>Loading...</h2>
-        ):props && props.productsList && props.productsList.error?
-        (
-            <h2>{props.productsList.error}</h2>
-        ):(
-            <div>
-                <h2>Image List & && & </h2>
-                {
-                    props.productsList && props.productsList.data &&
-                    props.productsList.data.map((item: any) =>
-                        <div>
-                            <h1>{item}</h1>
-                        </div>
-                    )
-                }
-            </div>
-        )*/
 }
-
-const mapStateToProps = (state: any) => {
-    return {
-        productsList: state.productsList
-    }
-}
-
-const mapDispatchToProps = (dispatch: any) => {
-    return{
-        fetchAllProducts:() => dispatch(fetchProductsList())
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(HomePage);
