@@ -3,25 +3,6 @@ html, body {
   width: 100%;
   margin: 0;
 }
-.Header {
-  display: flex;
-  background-color: pink;
-  height: 150px;
-}
-.RightAligned {
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  padding-right: 50px;
-  text-align: right;
-}
-.Search {
-  padding-top: 50px;
-}
-.Header div {
-  flex: 1;
-}
-
 #Main {
   display: flex;
   height: 100%;
@@ -33,33 +14,11 @@ html, body {
 #Main > .SideBar {
   order: -1;
 }
-
 .App, .Header, .SideBar, .HomePage {
   text-align: center;
 }
 
-.SideBar {
-  background-color: lightblue;
-  padding: 40px;
-  list-style: none;
-}
-.productList {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-color: black;
-}
-.productTitle {
-  text-align: center;
-}
-.product {
-  height: 250px;
-  width: 250px;
-  background-color: aqua;
-  padding: 5%;
-}
-
 li {
   padding: 15px;
+  list-style-type: none;
 }

@@ -1,0 +1,16 @@
+.productList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-color: black;
+  }
+  .productTitle {
+    text-align: center;
+  }
+  .product {
+    height: 250px;
+    width: 250px;
+    background-color: aqua;
+    padding: 5%;
+  }

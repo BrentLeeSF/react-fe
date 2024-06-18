@@ -3,7 +3,7 @@ import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
 import { thunk } from 'redux-thunk';
 import { Reducer } from '../redux/actions/reducer';
-//import counterReducer from './slice/counterSlice';
+import counterReducer from './slice/counterSlice';
 
 /*export default configureStore({
   reducer: {
@@ -11,7 +11,7 @@ import { Reducer } from '../redux/actions/reducer';
   }
 });*/
 
-const rootreducer = combineReducers({imglist:Reducer});
+const rootreducer = combineReducers({imglist:Reducer, counter: counterReducer});
 
 const store = configureStore({
   reducer: rootreducer,

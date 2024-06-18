@@ -1,6 +1,8 @@
-import { fetchImageList } from '../redux/actions/action';
+import { fetchImageList } from '../../redux/actions/action';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
+import { Counter } from '../counter';
+import './homepage.css';
 
 const HomePage = (props: any) => {
 
@@ -11,7 +13,8 @@ const HomePage = (props: any) => {
     const productList = props && props.imglist && props.imglist.data.map((product: any, index: number) => (
         <li key={index}>
             <div className="product">
-                {product.title}
+                <div>{product.title}</div>
+                <div><Counter index={index} /></div>
             </div>
         </li>
     ));

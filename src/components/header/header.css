@@ -1,0 +1,15 @@
+.Header {
+    display: flex;
+    background-color: pink;
+    height: 150px;
+  }
+  .RightAligned {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-right: 50px;
+    text-align: right;
+  }
+  .Header div {
+    flex: 1;
+  }

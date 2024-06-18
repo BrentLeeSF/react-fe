@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from './counter';
+import './search.css';
 
 export default function Search() {
   return (

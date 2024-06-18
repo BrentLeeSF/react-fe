@@ -1,5 +1,6 @@
 import React from 'react';
-import { listOfCategories } from '../data/listOfCategories';
+import { listOfCategories } from '../../data/listOfCategories';
+import './sidebar.css';
 
 const displayCategoryList = listOfCategories.map((category, index) => (
   <li key={index}>
