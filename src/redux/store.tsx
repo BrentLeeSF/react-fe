@@ -3,11 +3,11 @@ import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
 import { thunk } from 'redux-thunk';
 import postsSlice from '../redux/slice/postsSlice';
-import counterReducer from './slice/counterSlice';
+import cartSlice from '../redux/slice/cartSlice';
 
 const rootreducer = combineReducers({
   posts: postsSlice,
-  counter: counterReducer
+  counter: cartSlice
 });
 
 const store = configureStore({

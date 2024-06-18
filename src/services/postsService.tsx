@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+const POSTS_URL = 'https://jsonplaceholder.typicode.com';
 
 
 /**
@@ -10,7 +11,7 @@ const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
  */
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
     try {
-        const response = await axios.get(POSTS_URL);
+        const response = await axios.get(`${POSTS_URL}/posts`);
         return response.data;
     } catch (err: any) {
         return err.message;
@@ -19,7 +20,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
 
 export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPost) => {
     try {
-        const response = await axios.post(POSTS_URL, initialPost);
+        const response = await axios.post(`${POSTS_URL}/posts`, initialPost);
         return response.data;
     } catch (err: any) {
         return err.message;

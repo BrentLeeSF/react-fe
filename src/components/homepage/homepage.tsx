@@ -6,6 +6,7 @@ import { selectAllPosts, getPostsError, getPostsStatus } from '../../redux/slice
 import { fetchPosts } from '../../services/postsService';
 import { AppDispatch } from '../../redux/store';
 import { Post } from '../../interfaces/Post';
+import { Counter } from '../counter';
 
 export default function HomePage() {
 
@@ -25,6 +26,7 @@ export default function HomePage() {
         <li key={index}>
             <div className="product">
                 <div>{post.id}, {post.title}</div>
+                <Counter productId={post.id} />
             </div>
         </li>
     ));

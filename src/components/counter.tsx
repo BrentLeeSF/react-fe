@@ -1,29 +1,34 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../redux/slice/counterSlice';
+import { addProductToCart, deleteProductFromCart } from '../redux/slice/cartSlice';
 
 export const Counter = (props: any) => {
-  const count = useSelector((state: any) => state.counter.value)
-  const dispatch = useDispatch()
+
+  const productCountValue = useSelector((state: any) => state.productCountValue);
+  const currentProductId = useSelector((state: any) => state.currentProductId);
+
+  const dispatch = useDispatch();
+  
+  console.log('Counter = ',productCountValue,', id = ',props.productId);
 
   return (
     <div>
       <div>
           <button
             aria-label="Increment value"
-            onClick={() => dispatch(increment())}
+            onClick={() => dispatch(addProductToCart(props.productId, productCountValue))}
           >
             +
           </button>
-          <span>{count}</span>
+          <span>{productCountValue}</span>
           <button
             aria-label="Decrement value"
-            onClick={() => dispatch(decrement())}
+            onClick={() => dispatch(deleteProductFromCart(props.productId))}
           >
             -
           </button>
       </div>
-      <div>index = {props.counter}</div>
+      <div>index = {props.productId}</div>
     </div>
   )
 }
