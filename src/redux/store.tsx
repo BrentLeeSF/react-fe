@@ -2,7 +2,7 @@
 import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
 import { thunk } from 'redux-thunk';
-import postsSlice from '../services/postsSlice';
+import postsSlice from '../redux/slice/postsSlice';
 import counterReducer from './slice/counterSlice';
 
 const rootreducer = combineReducers({

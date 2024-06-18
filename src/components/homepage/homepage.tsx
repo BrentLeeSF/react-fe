@@ -2,7 +2,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import './homepage.css';
-import { selectAllPosts, getPostsError, getPostsStatus, fetchPosts } from '../../services/postsSlice';
+import { selectAllPosts, getPostsError, getPostsStatus } from '../../redux/slice/postsSlice';
+import { fetchPosts } from '../../services/postsService';
 import { AppDispatch } from '../../redux/store';
 import { Post } from '../../interfaces/Post';
 
