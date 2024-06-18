@@ -26,8 +26,7 @@ export const fetchImageList = () => {
         dispatch(fetchImgRequest);
         axios.get('https://jsonplaceholder.typicode.com/todos')
             .then((res: any)=>{
-                let listOfTodos = res.data
-                dispatch(fetimgSuccess(listOfTodos))
+                dispatch(fetimgSuccess(res.data))
             }).catch((err) => {
                 dispatch(fetimgFailure(err.message))
             })

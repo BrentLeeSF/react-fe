@@ -5,12 +5,6 @@ import { thunk } from 'redux-thunk';
 import { Reducer } from '../redux/actions/reducer';
 import counterReducer from './slice/counterSlice';
 
-/*export default configureStore({
-  reducer: {
-    counter: counterReducer
-  }
-});*/
-
 const rootreducer = combineReducers({imglist:Reducer, counter: counterReducer});
 
 const store = configureStore({
