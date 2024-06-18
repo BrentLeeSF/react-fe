@@ -2,10 +2,13 @@
 import { combineReducers, configureStore, Tuple } from '@reduxjs/toolkit';
 import { logger } from 'redux-logger';
 import { thunk } from 'redux-thunk';
-import { Reducer } from '../redux/actions/reducer';
+import { ProductsReducer } from '../redux/reducers/productsReducer';
 import counterReducer from './slice/counterSlice';
 
-const rootreducer = combineReducers({imglist:Reducer, counter: counterReducer});
+const rootreducer = combineReducers({
+  productsList: ProductsReducer,
+  counter: counterReducer
+});
 
 const store = configureStore({
   reducer: rootreducer,

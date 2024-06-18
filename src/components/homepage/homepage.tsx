@@ -1,16 +1,24 @@
-import { fetchImageList } from '../../redux/actions/action';
+import { fetchProductsList } from '../../services/products.service';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import { Counter } from '../counter';
+import { Product } from '../../interfaces/Product';
 import './homepage.css';
 
 const HomePage = (props: any) => {
 
+    /**
+     * https://stackoverflow.com/questions/58159108/react-get-state-from-redux-store-within-useeffect
+    const user = useSelector(state => state.user);
+    useEffect(() => { 
+        // do stuff     
+    }, [user]);*/
+
     useEffect(()=>{
-        props.fetchimages()
+        props.fetchAllProducts()
     });
 
-    const productList = props && props.imglist && props.imglist.data.map((product: any, index: number) => (
+    const productList = props && props.productsList && props.productsList.data.map((product: Product, index: number) => (
         <li key={index}>
             <div className="product">
                 <div>{product.title}</div>
@@ -28,18 +36,18 @@ const HomePage = (props: any) => {
             </div>
         </div>
     );
-    /*return props && props.imglist && props.imglist.loading?(
+    /*return props && props.productsList && props.productsList.loading?(
       
         <h2>Loading...</h2>
-        ):props && props.imglist && props.imglist.error?
+        ):props && props.productsList && props.productsList.error?
         (
-            <h2>{props.imglist.error}</h2>
+            <h2>{props.productsList.error}</h2>
         ):(
             <div>
                 <h2>Image List & && & </h2>
                 {
-                    props.imglist && props.imglist.data &&
-                    props.imglist.data.map((item: any) =>
+                    props.productsList && props.productsList.data &&
+                    props.productsList.data.map((item: any) =>
                         <div>
                             <h1>{item}</h1>
                         </div>
@@ -51,13 +59,13 @@ const HomePage = (props: any) => {
 
 const mapStateToProps = (state: any) => {
     return {
-        imglist: state.imglist
+        productsList: state.productsList
     }
 }
 
 const mapDispatchToProps = (dispatch: any) => {
     return{
-        fetchimages:() => dispatch(fetchImageList())
+        fetchAllProducts:() => dispatch(fetchProductsList())
     }
 }
 

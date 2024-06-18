@@ -2,47 +2,69 @@ import { Product } from "../interfaces/Product";
 
 export const listOfProducts: Product[] = [
     {
+      userId: 0,
       id: 0,
-      productDiscription: 'Product 0 Description'
+      title: 'Product 0 Description',
+      completed: false
     },
     {
+      userId: 1,
       id: 1,
-      productDiscription: 'Product 1 Description'
+      title: 'Product 1 Description',
+      completed: false
     },
     {
+      userId: 3,
       id: 2,
-      productDiscription: 'Product 2 Description'
+      title: 'Product 2 Description',
+      completed: false
     },
     {
+      userId: 3,
       id: 3,
-      productDiscription: 'Product 3 Description'
+      title: 'Product 3 Description',
+      completed: false
     },
     {
+      userId: 4,
       id: 4,
-      productDiscription: 'Product 4 Description'
+      title: 'Product 4 Description',
+      completed: false
     },
     {
+      userId: 5,
       id: 5,
-      productDiscription: 'Product 5 Description'
+      title: 'Product 5 Description',
+      completed: false
     },
     {
+      userId: 6,
       id: 6,
-      productDiscription: 'Product 6 Description'
+      title: 'Product 6 Description',
+      completed: false
     },
     {
+      userId: 7,
       id: 7,
-      productDiscription: 'Product 7 Description'
+      title: 'Product 7 Description',
+      completed: false
     },
     {
+      userId: 8,
       id: 8,
-      productDiscription: 'Product 8 Description'
+      title: 'Product 8 Description',
+      completed: false
     },
     {
+      userId: 9,
       id: 9,
-      productDiscription: 'Product 9 Description'
+      title: 'Product 9 Description',
+      completed: false
     },
     {
+      userId: 10,
       id: 10,
-      productDiscription: 'Product 10 Description'
+      title: 'Product 10 Description',
+      completed: false
     }
   ];

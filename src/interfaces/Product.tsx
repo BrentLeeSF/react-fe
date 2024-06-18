@@ -1,4 +1,6 @@
 export interface Product {
     id: number;
-    productDiscription: string;
+    userId: number;
+    title: string;
+    completed: boolean;
 }

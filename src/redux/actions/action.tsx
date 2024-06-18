@@ -1,37 +1,24 @@
-import { FETCH_IMG_FAILURE, FETCH_IMG_REQUEST, FETCH_IMG_SUCCESS } from './actionType';
-import axios from 'axios'
+import { FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS } from './actionType';
+import { Product } from '../../interfaces/Product';
 
-const fetchImgRequest = () => {
+export const fetchProductsRequest = () => {
     return {
-        type: FETCH_IMG_REQUEST
+        type: FETCH_PRODUCTS_REQUEST
     }
 }
 
-const fetimgSuccess = (data: any) => {
+export const fetchProductsSuccess = (data: Product[]) => {
     return {
-        type: FETCH_IMG_SUCCESS,
+        type: FETCH_PRODUCTS_SUCCESS,
         payload: data
     }
 }
 
-const fetimgFailure = (err: any) => {
+export const fetchProductsFailure = (err: any) => {
     return {
-        type: FETCH_IMG_FAILURE,
+        type: FETCH_PRODUCTS_FAILURE,
         payload: err
     }
 }
 
-export const fetchImageList = () => {
-    return (dispatch: any) => {
-        dispatch(fetchImgRequest);
-        axios.get('https://jsonplaceholder.typicode.com/todos')
-            .then((res: any)=>{
-                dispatch(fetimgSuccess(res.data))
-            }).catch((err) => {
-                dispatch(fetimgFailure(err.message))
-            })
-
-    }
-}
-
-export { FETCH_IMG_FAILURE, FETCH_IMG_REQUEST, FETCH_IMG_SUCCESS };
+export { FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS };
