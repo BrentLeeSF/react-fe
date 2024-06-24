@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addProduct, deleteProduct } from '../redux/slice/cartSlice';
+import { addProduct, deleteProduct } from '../../redux/slice/cartSlice';
 
 export const Counter = (props: any) => {
 

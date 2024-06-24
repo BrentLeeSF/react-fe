@@ -6,7 +6,7 @@ import { selectAllPosts, getPostsError, getPostsStatus } from '../../redux/slice
 import { fetchPosts } from '../../services/postsService';
 import { AppDispatch } from '../../redux/store';
 import { Post } from '../../interfaces/Post';
-import { Counter } from '../counter';
+import { Counter } from '../cartCounter/counter';
 
 export default function HomePage() {
 
