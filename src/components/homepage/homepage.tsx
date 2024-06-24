@@ -26,7 +26,7 @@ export default function HomePage() {
         <li key={index}>
             <div className="product">
                 <div>{post.id}, {post.title}</div>
-                <Counter productId={post.id} />
+                <Counter product={{id: post.id}} />
             </div>
         </li>
     ));

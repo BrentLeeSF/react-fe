@@ -5,9 +5,10 @@ import { thunk } from 'redux-thunk';
 import postsSlice from '../redux/slice/postsSlice';
 import cartSlice from '../redux/slice/cartSlice';
 
+
 const rootreducer = combineReducers({
   posts: postsSlice,
-  counter: cartSlice
+  cartProducts: cartSlice
 });
 
 const store = configureStore({
